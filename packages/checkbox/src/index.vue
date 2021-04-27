@@ -1,0 +1,134 @@
+<template>
+  <label class="sxq-checkbox">
+    <span class="sxq-checkbox-input">
+      <span
+        class="sxq-checkbox-inner"
+        :class="{ 'is-checked': isChecked }"
+      ></span>
+      <input
+        type="checkbox"
+        class="sxq-checkbox-native"
+        :value="label"
+        v-model="CKValue"
+      />
+    </span>
+    <span class="sxq-checkbox__label">
+      {{ label }}
+    </span>
+  </label>
+</template>
+
+<script>
+export default {
+  name: 'sxqCheckbox',
+  props: {
+    label: String,
+    value: [Boolean, Array]
+  },
+  inject: {
+    CKGroup: {
+      defalut: ''
+    }
+  },
+  computed: {
+    // 判断你是否选中
+    isChecked() {
+      if (this.isGroup) {
+        return this.CKGroup.value.includes(this.label)
+      } else {
+        if (typeof this.value === 'boolean') {
+          return this.value
+        } else {
+          return this.value.includes(this.label)
+        }
+      }
+    },
+    // 判断是否分组
+    isGroup() {
+      return this.CKGroup
+    },
+    // 数据绑定
+    CKValue: {
+      get() {
+        return this.isGroup ? this.CKGroup.value : this.value
+      },
+      set(newValue) {
+        if (this.isGroup) {
+          this.CKGroup.$emit('input', newValue)
+        } else {
+          this.$emit('input', newValue)
+        }
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.sxq-checkbox-input {
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  line-height: 1;
+  position: relative;
+  vertical-align: middle;
+}
+
+.sxq-checkbox-inner {
+  display: inline-block;
+  position: relative;
+  border: 1px solid #dcdfe6;
+  border-radius: 2px;
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  z-index: 1;
+  transition: border-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46),
+    background-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46);
+}
+
+.sxq-checkbox-inner:after {
+  box-sizing: content-box;
+  content: '';
+  border: 1px solid #fff;
+  border-left: 0;
+  border-top: 0;
+  height: 7px;
+  left: 4px;
+  position: absolute;
+  top: 1px;
+  transform: rotate(45deg) scaleY(0);
+  width: 3px;
+  transition: transform 0.15s ease-in 0.05s;
+  transform-origin: center;
+}
+
+.sxq-checkbox-inner.is-checked {
+  background-color: #409eff;
+  border-color: #409eff;
+}
+
+.sxq-checkbox-inner.is-checked:after {
+  transform: rotate(45deg) scaleY(1);
+}
+
+.sxq-checkbox-native {
+  opacity: 0;
+  display: none;
+}
+
+.sxq-checkbox__label {
+  margin-left: 10px;
+  display: inline-block;
+  line-height: 19px;
+  font-size: 14px;
+}
+
+.sxq-checkbox {
+  color: #606266;
+  margin-right: 10px;
+  cursor: pointer;
+}
+</style>
