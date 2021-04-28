@@ -1,4 +1,4 @@
-import Checkbox from './src/index.vue'
+import Checkbox from './index.vue'
 
 Checkbox.install = function (Vue) {
   Vue.component(Checkbox.name, Checkbox)

@@ -1,4 +1,4 @@
-import Message from './src/index.vue'
+import Message from './index.vue'
 const instances = [] // 存放的是每个message的对象
 const verticalTop = 16 // 每个message的top高度
 let index = 0 // 为message添加id

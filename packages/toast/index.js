@@ -1,4 +1,4 @@
-import Toast from './src/index.vue'
+import Toast from './index.vue'
 
 export default {
   install(Vue) {

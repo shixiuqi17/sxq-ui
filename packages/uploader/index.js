@@ -1,4 +1,4 @@
-import Uploader from './src/index.vue'
+import Uploader from './index.vue'
 
 Uploader.install = function (Vue) {
   Vue.component(Uploader.name, Uploader)

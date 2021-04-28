@@ -1,4 +1,4 @@
-import MessageBox from './src/index.vue'
+import MessageBox from './index.vue'
 
 export default {
   install(Vue) {

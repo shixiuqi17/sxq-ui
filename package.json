@@ -12,7 +12,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name sxq-ui --dest lib packages/index.js"
+    "lib": "vue-cli-service build --target lib --name sxq-ui --dest lib packages/index.js",
+    "pack": "npm run lib && npm pack"
   },
   "dependencies": {
     "core-js": "^3.6.5",

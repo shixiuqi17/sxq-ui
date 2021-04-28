@@ -1,4 +1,4 @@
-import CheckboxGroup from './src/index.vue'
+import CheckboxGroup from './index.vue'
 
 CheckboxGroup.install = function (Vue) {
   Vue.component(CheckboxGroup.name, CheckboxGroup)
