@@ -1,24 +1,27 @@
-# sxq-ui
+# vue组件库
 
-## Project setup
+## 目的
+
+为了深入学习vue，该项目会持续更新
+
+## 已有组件
+
+* Icon
+* Button
+* Input
+* InputButton
+* Checkbox
+* Radio
+* switch
+* Card
+* Uploader
+* Message
+* MessageBox
+* Toast
+
+## 下载项目
+
 ```
-npm install
+npm install sxq-ui
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

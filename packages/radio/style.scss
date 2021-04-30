@@ -75,3 +75,19 @@
     }
   }
 }
+
+.is-disabled {
+  cursor: not-allowed !important;
+  .sxq-radio-input,
+  .sxq-radio-inner {
+    cursor: not-allowed !important;
+    background-color: #f5f7fa !important;
+    border-color: #e4e7ed !important;
+    &::after {
+      background-color: #c0c4cc !important;
+    }
+  }
+  .sxq-radio-label {
+    color: #c0c4cc !important;
+  }
+}

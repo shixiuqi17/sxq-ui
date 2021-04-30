@@ -15,10 +15,7 @@ export default {
   props: {
     shadow: {
       type: String,
-      default: 'always',
-      validator: value => {
-        return ['always', 'hover', 'never'].includes(value)
-      }
+      default: 'always'
     },
     bodyStyle: {
       type: String,

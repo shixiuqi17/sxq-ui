@@ -1,5 +1,5 @@
 <template>
-  <label class="sxq-checkbox">
+  <label :class="['sxq-checkbox', styleClass]">
     <span class="sxq-checkbox-input">
       <span
         class="sxq-checkbox-inner"
@@ -9,6 +9,7 @@
         type="checkbox"
         class="sxq-checkbox-native"
         :value="label"
+        :disabled="disabled"
         v-model="CKValue"
       />
     </span>
@@ -23,7 +24,11 @@ export default {
   name: 'sxqCheckbox',
   props: {
     label: String,
-    value: [Boolean, Array]
+    value: [Boolean, Array],
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
   inject: {
     CKGroup: {
@@ -31,6 +36,11 @@ export default {
     }
   },
   computed: {
+    styleClass() {
+      return {
+        'is-disabled': this.disabled
+      }
+    },
     // 判断你是否选中
     isChecked() {
       if (this.isGroup) {

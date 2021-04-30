@@ -15,7 +15,21 @@
         只能上传jpg/png文件，且不超过500kb
       </div>
     </sxq-uploader> -->
-    <sxq-button>123</sxq-button>
+    <!-- <sxq-checkbox-group v-model="msg">
+      <sxq-checkbox label="嘿嘿"></sxq-checkbox>
+      <sxq-checkbox label="嘿wa 嘿"></sxq-checkbox>
+      <sxq-checkbox label="哈哈" disabled></sxq-checkbox>
+      <sxq-checkbox label="哈哈" disabled></sxq-checkbox>
+    </sxq-checkbox-group> -->
+    <sxq-radio v-model="num2" label="aaa" disabled></sxq-radio>
+    <sxq-radio v-model="num2" label="bbb" disabled></sxq-radio>
+    <sxq-checkbox-group v-model="checkList">
+      <sxq-checkbox label="复选框 A"></sxq-checkbox>
+      <sxq-checkbox label="复选框 B"></sxq-checkbox>
+      <sxq-checkbox label="复选框 C"></sxq-checkbox>
+      <sxq-checkbox label="禁用" disabled></sxq-checkbox>
+      <sxq-checkbox label="选中且禁用" disabled></sxq-checkbox>
+    </sxq-checkbox-group>
   </div>
 </template>
 
@@ -24,8 +38,10 @@ export default {
   name: 'Home',
   data() {
     return {
-      msg: false,
-      step: 3
+      msg: [3],
+      step: 3,
+      num2: 'aaa',
+      checkList: ['选中且禁用', '复选框 A']
     }
   },
   mounted() {},

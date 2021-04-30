@@ -9,7 +9,7 @@
     <span v-if="icon">
       <i :class="iconName"></i>
     </span>
-    <span :class="icon ? 'ml-3' : ''"><slot></slot></span>
+    <span :class="icon ? 'ml-3' : ''" class="text"><slot></slot></span>
   </button>
 </template>
 

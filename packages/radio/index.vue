@@ -1,11 +1,12 @@
 <template>
-  <label class="radio">
+  <label :class="['radio', classStyle]">
     <span :class="['sxq-radio-input', { 'is-checked': isChecked }]">
       <span class="sxq-radio-inner"></span>
       <input
         type="radio"
         class="sxq-radio-original"
         :value="label"
+        :disabled="disabled"
         v-model="radioValue"
       />
     </span>
@@ -29,9 +30,18 @@ export default {
     label: {
       type: String,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
+    classStyle() {
+      return {
+        'is-disabled': this.disabled
+      }
+    },
     isGroup() {
       return this.RadioGroup
     },

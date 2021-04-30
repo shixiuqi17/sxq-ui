@@ -52,8 +52,12 @@ export default {
       type: Boolean,
       default: false
     },
-    onSuccess: Function,
-    onError: Function
+    onSuccess: {
+      type: Function
+    },
+    onError: {
+      type: Function
+    }
   },
   data() {
     return {
@@ -157,7 +161,7 @@ export default {
     },
     tempImages(newValue) {
       this.previewImages = [...this.previewImages, ...newValue]
-      if (this.previewImages.length >= this.limit) {
+      if (this.previewImages.length > this.limit) {
         this.previewImages = this.previewImages.slice(0, this.limit)
         return this.onError(`最多上传${this.limit}张图片`)
       }

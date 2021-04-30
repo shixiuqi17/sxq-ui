@@ -26,6 +26,12 @@
 .iconfont {
   vertical-align: text-bottom;
 }
+.text {
+  vertical-align: bottom;
+  & > * {
+    margin-left: 5px;
+  }
+}
 
 .ml-3 {
   margin-left: 3px;
